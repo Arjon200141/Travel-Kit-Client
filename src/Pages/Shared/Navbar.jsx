@@ -7,7 +7,7 @@ const Navbar = () => {
     </>
     return (
         <div >
-            <div className="navbar fixed z-10 bg-opacity-35 bg-base-100 merriweather">
+            <div className="navbar py-3 fixed z-10 bg-opacity-35 bg-base-100 merriweather">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -27,7 +27,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn px-6 text-xl font-semibold">Log In</a>
+                    <a className="btn px-6 text-2xl py-1 bg-amber-200 font-semibold">Log In</a>
                 </div>
             </div>
         </div>
