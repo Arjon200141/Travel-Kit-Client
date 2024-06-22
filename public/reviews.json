@@ -1,0 +1,56 @@
+[
+    {
+        "reviewerName": "John Doe",
+        "image": "https://i.ibb.co/dQpkt5j/serious-readhead-bearded-man-white-tshirt-holding-folder-pen-171337-7855.jpg",
+        "reviewDetails": "Great pair of shoes! Very comfortable and stylish. I wore them all day without any discomfort. Highly recommended for anyone looking for quality shoes.",
+        "rating": 4.5
+    },
+    {
+        "reviewerName": "Jane Smith",
+        "image": "https://i.ibb.co/B2Mq1pc/handsome-mature-businessman-looking-confident-smiling-176420-31691.jpg",
+        "reviewDetails": "These pants fit perfectly and are very durable. The material feels high-quality and they don't wear out easily. Ideal for both casual and formal occasions.",
+        "rating": 4.7
+    },
+    {
+        "reviewerName": "Bob Johnson",
+        "image": "https://i.ibb.co/8s15CCs/handsome-young-businessman-working-office-1301-3916.jpg",
+        "reviewDetails": "The T-shirt is of excellent quality and very soft. It retains its shape after multiple washes. A great addition to anyone's wardrobe, suitable for daily wear.",
+        "rating": 4.6
+    },
+    {
+        "reviewerName": "Alice Brown",
+        "image": "https://i.ibb.co/BNmmQB1/portrait-young-man-while-studying-books-641386-449.jpg",
+        "reviewDetails": "This bag is very spacious and stylish. It has multiple compartments which makes organization easy. Perfect for both work and travel purposes.",
+        "rating": 4.8
+    },
+    {
+        "reviewerName": "Michael Davis",
+        "image": "https://i.ibb.co/3pMP8mf/thoughtful-businessman-sitting-office-desk-writing-trying-think-up-idea-squinting-as-pondering-new-c.jpg",
+        "reviewDetails": "The bottle keeps my drinks cold for hours. It's leak-proof and very sturdy. Excellent for outdoor activities and long trips.",
+        "rating": 4.9
+    },
+    {
+        "reviewerName": "Emily Wilson",
+        "image": "https://i.ibb.co/VjzH52c/beautiful-casual-woman-using-laptop-109710-1071.jpg",
+        "reviewDetails": "The cap fits well and looks great. It provides good sun protection and is made of breathable material. Perfect for sports and casual outings.",
+        "rating": 3.5
+    },
+    {
+        "reviewerName": "Chris Lee",
+        "image": "https://i.ibb.co/3B9sgMF/pretty-smiling-joyfully-female-with-fair-hair-dressed-casually-looking-with-satisfaction-176420-1518.jpg",
+        "reviewDetails": "The earbuds have amazing sound quality. The bass is deep, and the highs are crystal clear. They are also very comfortable to wear for long periods.",
+        "rating": 3.7
+    },
+    {
+        "reviewerName": "Patricia Martinez",
+        "image": "https://i.ibb.co/D5Phm6B/blonde-young-businesswoman-writing-diary-with-pen-office-23-2148029077.jpg",
+        "reviewDetails": "The shoes are very comfortable and stylish. They offer great support and are perfect for long walks. Definitely worth the price.",
+        "rating": 4.6
+    },
+    {
+        "reviewerName": "David Taylor",
+        "image": "https://i.ibb.co/yn6MXzr/portrait-concentrated-redhead-man-writing-notebook-171337-9861.jpg",
+        "reviewDetails": "These pants are very comfortable and fit perfectly. The fabric is soft and stretches just right. Ideal for both work and casual wear.",
+        "rating": 3.9
+    }
+]
