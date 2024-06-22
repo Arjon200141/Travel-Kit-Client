@@ -5,6 +5,7 @@ import Root from "../Layout/Root";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import Home from "../Pages/Home/Home/Home";
 import Shop from "../Pages/Shared/Shop/Shop/Shop";
+import Contact from "../Pages/Contact/Contact";
   
   export const router = createBrowserRouter([
     {
@@ -19,7 +20,11 @@ import Shop from "../Pages/Shared/Shop/Shop/Shop";
         {
           path:"/shop",
           element:<Shop></Shop>,
-          loader:()=> fetch('products.json')
+          loader:()=> fetch('http://localhost:5000/products')
+        },
+        {
+          path:"/contact",
+          element:<Contact></Contact>
         }
       ]
     },

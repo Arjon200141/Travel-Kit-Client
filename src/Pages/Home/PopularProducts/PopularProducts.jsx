@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import Products from "../../Shared/Products";
+import { Link } from "react-router-dom";
 
 const PopularProducts = () => {
     const [products, setProducts] = useState([]);
     useEffect(() => {
-        fetch('products.json')
+        fetch('http://localhost:5000/products')
             .then(res => res.json())
             .then(data => {
                 const popularItems = data.filter(item => item.type == 'Popular')
@@ -23,9 +24,11 @@ const PopularProducts = () => {
                     products.map(item => <Products key={products.id} item={item}></Products>)
                 }
             </div>
-            <div className="my-10 flex justify-center">
-                <button className="btn bg-white border-b-4 border-black text-2xl font-semibold border-t-0 border-l-0 border-r-0">Show All Products</button>
-            </div>
+            <Link to="/shop">
+                <div className="my-10 flex justify-center">
+                    <button className="btn bg-white px-12 pb-4 pt-2 border-b-4 border-black text-2xl font-semibold border-t-0 border-l-0 border-r-0">Purchase Products</button>
+                </div>
+            </Link>
         </div>
     );
 };

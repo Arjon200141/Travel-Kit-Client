@@ -5,6 +5,7 @@ const Navbar = () => {
     const navOptions = <>
         <Link to="/"><li>Home</li></Link>
         <Link to="/shop"><li>Our Shop</li></Link>
+        <Link to="/contact"><li>Contact Us</li></Link>
     </>
     return (
         <div >

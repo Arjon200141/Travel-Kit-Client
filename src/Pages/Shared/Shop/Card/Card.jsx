@@ -20,7 +20,7 @@ const Card = ({ item }) => {
                         <p className="text-xl"><span className="font-semibold ">Warrenty : </span>{warranty}</p>
                     </div>
                     <div className="card-actions justify-center">
-                        <button className="btn w-full bg-lime-100 border-b-4 border-black border-t-0 border-x-0 text-2xl font-semibold">Add to Cart</button>
+                        <button className="btn hover:bg-cyan-300 w-full bg-lime-100 border-b-4 border-black border-t-0 border-x-0 text-2xl font-semibold">Add to Cart</button>
                     </div>
                 </div>
             </div>
