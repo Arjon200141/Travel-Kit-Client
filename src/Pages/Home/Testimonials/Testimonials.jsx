@@ -20,7 +20,7 @@ const Testimonials = () => {
                 <h2 className='w-96 border-y-4 border-gray-600 text-center py-3 text-4xl font-semibold'>What Our Clients Say</h2>
             </div>
 
-            <div className='bg-sky-200/45 py-4'>
+            <div className='bg-sky-200/45 py-4 px-24'>
                 <Swiper navigation={true} modules={[Navigation]} className="mySwiper my-8">
 
                     {

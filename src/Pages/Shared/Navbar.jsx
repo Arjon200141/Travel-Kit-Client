@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
 
     const navOptions = <>
-
+        <Link to="/"><li>Home</li></Link>
+        <Link to="/shop"><li>Our Shop</li></Link>
     </>
     return (
         <div >
@@ -18,11 +19,11 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <Link to="/">
-                    <a className="text-3xl font-bold">TRAVEL  <span className="text-red-600"> KIT</span></a>
+                        <a className="text-3xl font-bold">TRAVEL  <span className="text-red-600"> KIT</span></a>
                     </Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1">
+                    <ul className="menu gap-6 menu-horizontal text-xl px-1">
                         {navOptions}
                     </ul>
                 </div>

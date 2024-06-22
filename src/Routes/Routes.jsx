@@ -4,6 +4,7 @@ import {
 import Root from "../Layout/Root";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import Home from "../Pages/Home/Home/Home";
+import Shop from "../Pages/Shared/Shop/Shop/Shop";
   
   export const router = createBrowserRouter([
     {
@@ -14,6 +15,11 @@ import Home from "../Pages/Home/Home/Home";
         {
             path:"/",
             element: <Home></Home>,
+        },
+        {
+          path:"/shop",
+          element:<Shop></Shop>,
+          loader:()=> fetch('products.json')
         }
       ]
     },
