@@ -47,7 +47,6 @@ const Contact = () => {
                 <div className='flex justify-center my-16'>
                     <h2 className='w-96 border-y-4 border-gray-600 text-center py-3 text-4xl font-semibold'>Contact Form</h2>
                 </div>
-
                 <div className="mx-28 bg-sky-300/35 mb-12 rounded-md">
                     <form className="card-body">
                         <div className="flex gap-8 justify-between">

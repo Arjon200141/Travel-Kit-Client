@@ -28,9 +28,13 @@ const Navbar = () => {
                         {navOptions}
                     </ul>
                 </div>
+
                 <div className="navbar-end">
-                    <a className="btn px-6 text-2xl py-1 bg-amber-200 font-semibold">Log In</a>
+                    <Link to="/login">
+                        <a className="btn px-6 text-2xl py-1 bg-amber-200 font-semibold">Log In</a>
+                    </Link>
                 </div>
+
             </div>
         </div>
     );

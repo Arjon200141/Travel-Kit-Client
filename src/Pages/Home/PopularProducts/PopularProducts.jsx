@@ -9,7 +9,6 @@ const PopularProducts = () => {
             .then(res => res.json())
             .then(data => {
                 const popularItems = data.filter(item => item.type == 'Popular')
-                console.log(popularItems);
                 setProducts(popularItems)
             }
             )
