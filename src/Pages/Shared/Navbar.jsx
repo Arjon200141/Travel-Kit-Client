@@ -1,14 +1,38 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Providers/AuthProviders";
+import useCart from "../../hooks/useCart";
 
 const Navbar = () => {
+    const { user, logOut } = useContext(AuthContext);
+    const [cart] = useCart();
 
-    const navOptions = <>
-        <Link to="/"><li>Home</li></Link>
-        <Link to="/shop"><li>Our Shop</li></Link>
-        <Link to="/contact"><li>Contact Us</li></Link>
-    </>
+    const handleLogOut = () => {
+        logOut()
+        .then(() => {})
+        .catch(error => {
+            console.error(error.message);
+        });
+    };
+
+    const navOptions = (
+        <>
+            <Link to="/"><li>Home</li></Link>
+            <Link to="/shop"><li>Our Shop</li></Link>
+            <Link to="/contact"><li>Contact Us</li></Link>
+            <Link>
+                <li className="">
+                    <button className="btn bg-white/35 border-0">
+                        <img src="https://i.ibb.co/jDdJBhv/shopping-cart.png" alt="" className="h-6 w-6" />
+                        <div className="badge bg-white/70 font-semibold">{cart.length}</div>
+                    </button>
+                </li>
+            </Link>
+        </>
+    );
+
     return (
-        <div >
+        <div>
             <div className="navbar py-3 fixed z-10 bg-opacity-35 bg-base-100 merriweather">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -20,21 +44,31 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <Link to="/">
-                        <a className="text-3xl font-bold">TRAVEL  <span className="text-red-600"> KIT</span></a>
+                        <a className="text-3xl font-bold">TRAVEL <span className="text-red-600"> KIT</span></a>
                     </Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="menu gap-6 menu-horizontal text-xl px-1">
+                    <ul className="menu flex items-center gap-6 menu-horizontal text-xl px-1">
                         {navOptions}
                     </ul>
                 </div>
 
                 <div className="navbar-end">
-                    <Link to="/login">
-                        <a className="btn px-6 text-2xl py-1 bg-amber-200 font-semibold">Log In</a>
-                    </Link>
+                    {user ? (
+                        <>
+                            <div className="flex items-center">
+                                <img src={user.photoURL} alt={user.displayName} className="h-12 w-12 rounded-full mr-3 border-2 border-black" />
+                                <button onClick={handleLogOut} className="btn px-6 text-2xl py-1 bg-lime-200 font-semibold">Log Out</button>
+                            </div>
+                        </>
+                    ) : (
+                        <>
+                            <Link to="/login">
+                                <a className="btn px-6 text-2xl py-1 bg-amber-200 font-semibold">Log In</a>
+                            </Link>
+                        </>
+                    )}
                 </div>
-
             </div>
         </div>
     );
