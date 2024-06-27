@@ -3,6 +3,7 @@ import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from 'react-s
 import { AuthContext } from '../../Providers/AuthProviders';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import SocialLogIn from '../../SocialLogIn/SocialLogIn';
 
 const LogIn = () => {
 
@@ -76,6 +77,8 @@ const LogIn = () => {
                             <div className="form-control mt-2">
                                 <input type="submit" disabled={disabled} value="Log In" className="btn bg-sky-200 text-xl font-semibold" />
                             </div>
+                            <div className="divider">OR</div>
+                            <SocialLogIn></SocialLogIn>
                         </form>
                         <h3 className='mb-4 text-black text-xl '>New Here? <span className='font-bold'><Link to="/register" > Create New Account</Link></span></h3>
                     </div>

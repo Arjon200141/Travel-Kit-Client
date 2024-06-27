@@ -3,11 +3,15 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProviders";
 import Swal from "sweetalert2";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
+import SocialLogIn from "../../SocialLogIn/SocialLogIn";
 
 const Register = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const { createUser, updateUserProfile } = useContext(AuthContext);
     const navigate = useNavigate();
+    const axiosPublic = useAxiosPublic();
+    const from = location.state?.from?.pathname || "/";
 
     const onSubmit = data => {
         createUser(data.email, data.password)
@@ -16,14 +20,22 @@ const Register = () => {
             console.log(loggedUser);
             updateUserProfile(data.name, data.photoURL)
             .then(() => {
-                console.log("User Profile Updated!!");
-                reset();
+                const userInfo = {
+                    name:data.name,
+                    email:data.email,
+                    photo:data.photoURL
+                }
+                axiosPublic.post('/users',userInfo)
+                .then(res => {
+                    if(res.data.insertedId)
+                        reset();
                 Swal.fire({
                     title: "Congratulations!",
                     text: "User Created Successfully!!!",
                     icon: "success"
                 });
-                navigate("/");
+                navigate(from, { replace: true });
+                })
             })
             .catch(error => console.error(error));
         })
@@ -67,8 +79,10 @@ const Register = () => {
                                 {errors.password && <span className="text-yellow-400 font-medium">This field is required</span>}
                             </div>
                             <div className="form-control mt-6">
-                                <input type="submit" value="Register" className="btn bg-lime-200" />
+                                <input type="submit" value="Register" className="btn bg-lime-200 text-2xl font-semibold" />
                             </div>
+                            <div className="divider">OR</div>
+                            <SocialLogIn></SocialLogIn>
                         </form>
                         <h3 className='mb-8 text-black text-2xl '>Already have an Account? <span className='font-bold'><Link to="/login">Log In Now</Link></span></h3>
                     </div>

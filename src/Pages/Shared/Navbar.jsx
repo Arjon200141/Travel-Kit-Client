@@ -20,7 +20,7 @@ const Navbar = () => {
             <Link to="/"><li>Home</li></Link>
             <Link to="/shop"><li>Our Shop</li></Link>
             <Link to="/contact"><li>Contact Us</li></Link>
-            <Link>
+            <Link to="/dashboard/cart">
                 <li className="">
                     <button className="btn bg-white/35 border-0">
                         <img src="https://i.ibb.co/jDdJBhv/shopping-cart.png" alt="" className="h-6 w-6" />
