@@ -2,17 +2,19 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProviders";
 import useCart from "../../hooks/useCart";
+import useAdmin from "../../hooks/useAdmin";
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
     const [cart] = useCart();
+    const [isAdmin, isAdminLoading] = useAdmin();
 
     const handleLogOut = () => {
         logOut()
-        .then(() => {})
-        .catch(error => {
-            console.error(error.message);
-        });
+            .then(() => { })
+            .catch(error => {
+                console.error(error.message);
+            });
     };
 
     const navOptions = (
@@ -28,6 +30,12 @@ const Navbar = () => {
                     </button>
                 </li>
             </Link>
+            {
+                user && isAdmin && <Link to="/dashboard/adminhome"><li>Dashboard</li></Link>
+            }
+            {
+                user && !isAdmin && <Link to="/dashboard/userHome"><li>Dashboard</li></Link>
+            }
         </>
     );
 

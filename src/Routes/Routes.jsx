@@ -16,6 +16,10 @@ import AddProduct from "../Pages/Dashboard/AddProduct/AddProduct";
 import AdminRoutes from "./AdminRoutes";
 import ManageProduct from "../Pages/Dashboard/ManageProduct/ManageProduct";
 import UpdateProduct from "../Pages/Dashboard/UpdateProduct/UpdateProduct";
+import Payment from "../Pages/Dashboard/Payment/Payment";
+import PaymentHistory from "../Pages/Dashboard/Payment/PaymentHistory";
+import UserHome from "../Pages/Dashboard/UserHome/UserHome";
+import AdminHome from "../Pages/Dashboard/AdminHome/AdminHome";
   
   export const router = createBrowserRouter([
     {
@@ -51,12 +55,28 @@ import UpdateProduct from "../Pages/Dashboard/UpdateProduct/UpdateProduct";
       element:<PrivateRoutes><Dashboard></Dashboard></PrivateRoutes>,
       children:[
         {
+          path:"userHome",
+          element:<UserHome></UserHome>
+        },
+        {
           path:"cart",
           element:<Cart></Cart>
+        },
+        {
+          path:"payment",
+          element:<Payment></Payment>
+        },
+        {
+          path:"paymentHistory",
+          element:<PaymentHistory></PaymentHistory>
         },
 
 
         //Admin Routes
+        {
+          path:"adminhome",
+          element:<AdminRoutes><AdminHome></AdminHome></AdminRoutes>
+        },
         {
           path:'allusers',
           element:<AdminRoutes><AllUsers></AllUsers></AdminRoutes>

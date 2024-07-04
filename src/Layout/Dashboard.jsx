@@ -39,7 +39,7 @@ const Dashboard = () => {
                             :
                             <>
                                 <li>
-                                    <NavLink className="flex items-center gap-2" to="/dashboard/userhome"><FaHome />
+                                    <NavLink className="flex items-center gap-2" to="/dashboard/userHome"><FaHome />
                                         User Home</NavLink>
                                 </li>
                                 <li>
@@ -47,7 +47,7 @@ const Dashboard = () => {
                                         My Cart</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink className="flex items-center gap-2" to="/dashboard/cart"><MdWorkHistory />
+                                    <NavLink className="flex items-center gap-2" to="/dashboard/paymentHistory"><MdWorkHistory />
                                         Payment History</NavLink>
                                 </li>
                                 <li>
