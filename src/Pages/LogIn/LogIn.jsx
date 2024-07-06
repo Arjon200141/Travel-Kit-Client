@@ -7,12 +7,17 @@ import SocialLogIn from '../../SocialLogIn/SocialLogIn';
 
 const LogIn = () => {
 
-    const { signIn } = useContext(AuthContext);
     const [disabled, setDisabled] = useState(true);
+    const { signIn } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
 
     const from = location.state?.from?.pathname || "/";
+    console.log('state in the location login page', location.state)
+
+    useEffect(() => {
+        loadCaptchaEnginge(6);
+    }, [])
 
     const handleLogin = event => {
         event.preventDefault();
@@ -25,28 +30,24 @@ const LogIn = () => {
                 const user = result.user;
                 console.log(user);
                 Swal.fire({
-                    title: "Welcome!!",
-                    text: "Log In Successful !!!",
+                    title: "Welcome Back!",
+                    text: "User Logged In Successfully!",
                     icon: "success"
-                });
+                  });
                 navigate(from, { replace: true });
             })
     }
 
-    const handleCaptcha = e => {
+    const handleValidateCaptcha = (e) => {
         const user_captcha_value = e.target.value;
-        console.log(user_captcha_value);
         if (validateCaptcha(user_captcha_value)) {
-            setDisabled(false)
+            setDisabled(false);
         }
         else {
             setDisabled(true)
         }
     }
 
-    useEffect(() => {
-        loadCaptchaEnginge(6);
-    }, [])
     return (
         <div className=''>
             <div className="hero min-h-screen" style={{ backgroundImage: 'url(https://i.ibb.co/sWWb5Dc/1000-F-819387038-ccl-R3-Xmknn7-Ie-Ntqv-YMd-Oug-We-Fj4-PBh3.jpg)' }}>
@@ -71,7 +72,7 @@ const LogIn = () => {
                                 <label className="label">
                                     <LoadCanvasTemplate />
                                 </label>
-                                <input onBlur={handleCaptcha} type="text" name="captcha" placeholder="Type the Text Above" className="input input-bordered text-xl text-black" required />
+                                <input onBlur={handleValidateCaptcha} type="text" name="captcha" placeholder="Type the Text Above" className="input input-bordered text-xl text-black" required />
                             </div>
 
                             <div className="form-control mt-2">

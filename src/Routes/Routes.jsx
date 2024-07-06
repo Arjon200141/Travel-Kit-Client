@@ -20,6 +20,7 @@ import Payment from "../Pages/Dashboard/Payment/Payment";
 import PaymentHistory from "../Pages/Dashboard/Payment/PaymentHistory";
 import UserHome from "../Pages/Dashboard/UserHome/UserHome";
 import AdminHome from "../Pages/Dashboard/AdminHome/AdminHome";
+import About from "../Pages/About/About";
   
   export const router = createBrowserRouter([
     {
@@ -35,6 +36,10 @@ import AdminHome from "../Pages/Dashboard/AdminHome/AdminHome";
           path:"/shop",
           element:<Shop></Shop>,
           loader:()=> fetch('http://localhost:5000/products')
+        },
+        {
+          path:"/about",
+          element:<About></About>
         },
         {
           path:"/contact",

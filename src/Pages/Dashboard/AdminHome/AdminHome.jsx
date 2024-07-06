@@ -31,7 +31,7 @@ const AdminHome = () => {
         <div>
             <h2 className="text-5xl font-semibold text-center mb-12">
                 <span>Hi, Welcome </span>
-                {user?.displayName ? user.displayName : 'Back'}
+                {user?.displayName ? user.displayName : 'Back'}!!
             </h2>
             <div className="">
                 <div className="stats gap-16 bg-sky-100 border-0 w-full">

@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Providers/AuthProviders";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import useCart from "../../../hooks/useCart";
+import useProduct from "../../../hooks/useProduct";
 
 
 const CheckoutForm = () => {
@@ -16,6 +17,7 @@ const CheckoutForm = () => {
     const axiosSecure = useAxiosSecure();
     const { user } = useContext(AuthContext);
     const [cart, refetch] = useCart();
+    const [products] = useProduct();
     const navigate = useNavigate();
 
     const totalPrice = cart.reduce((total, item) => total + item.price, 0)
@@ -84,6 +86,7 @@ const CheckoutForm = () => {
                     transactionId: paymentIntent.id,
                     date: new Date(),
                     cartIds: cart.map(item => item._id),
+                    productIds: products.map(item => item._id),
                     status: 'pending'
                 }
 

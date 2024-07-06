@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { AuthContext } from "../Providers/AuthProviders";
 import useAxiosPublic from "../hooks/useAxiosPublic";
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const SocialLogIn = () => {
     const { googleSignIn } = useContext(AuthContext);
@@ -20,6 +21,11 @@ const SocialLogIn = () => {
                 axiosPublic.post('/users' , userInfo)
                 .then(res=>{
                     console.log(res.data);
+                    Swal.fire({
+                        title: "Congratulations!",
+                        text: "User Logged In Successfully!",
+                        icon: "success"
+                      });
                     navigate(from, { replace: true });
                 })
             })

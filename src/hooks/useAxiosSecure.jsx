@@ -11,28 +11,32 @@ const useAxiosSecure = () => {
     const { logOut } = useContext(AuthContext);
     const navigate = useNavigate();
 
-    axiosSecure.interceptors.request.use(function (config) {
-        const token = localStorage.getItem('access-token');
-        if (token) {
-            config.headers.Authorization = `Bearer ${token}`;
+    axiosSecure.interceptors.request.use(
+        (config) => {
+            const token = localStorage.getItem('access-token');
+            if (token) {
+                config.headers.Authorization = `Bearer ${token}`;
+            }
+            return config;
+        },
+        (error) => {
+            return Promise.reject(error);
         }
-        console.log('Request intercepted');
-        return config;
-    }, function (error) {
-        return Promise.reject(error);
-    });
+    );
 
-    axiosSecure.interceptors.response.use(function (response) {
-        return response;
-    }, async (error) => {
-        const status = error.response ? error.response.status : null;
-        if (status === 401 || status === 403) {
-            await logOut();
-            navigate('/login');
+    axiosSecure.interceptors.response.use(
+        (response) => {
+            return response;
+        },
+        async (error) => {
+            const status = error.response ? error.response.status : null;
+            if (status === 401 || status === 403) {
+                await logOut();
+                navigate('/login');
+            }
+            return Promise.reject(error);
         }
-        console.log('Status Error', status);
-        return Promise.reject(error);
-    });
+    );
 
     return axiosSecure;
 };
