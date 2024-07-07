@@ -1,0 +1,62 @@
+[
+    {
+        "name": "Beach Bliss at Cox's Bazar",
+        "place": "Cox's Bazar",
+        "date": "2024-08-15",
+        "days": 3,
+        "rent": 3600,
+        "bus": "AC Coach",
+        "description": "Experience the longest natural sea beach in the world at Cox's Bazar. Enjoy the serene beach, vibrant local markets, and delicious seafood. Don't miss the beautiful sunsets and the local attractions such as Himchari National Park and Inani Beach.",
+        "image": "https://i.ibb.co/rGPXZ2k/scenic-view-sea-against-sky-1048944-9981150.jpg"
+    },
+    {
+        "name": "Mystic Hills of Sajek",
+        "place": "Sajek",
+        "date": "2024-08-20",
+        "days": 4,
+        "rent": 45,
+        "bus": "Non-AC Coach",
+        "description": "Discover the hidden gem of Sajek Valley with its breathtaking landscapes and peaceful ambiance. Enjoy trekking, exploring indigenous cultures, and the tranquil environment of this hill station.",
+        "image": "https://i.ibb.co/MDdg34N/aerial-view-beautiful-sky-road-top-mountains-with-green-jungle-nan-province-thailand-335224-1063.jpg"
+    },
+    {
+        "name": "Lake Paradise in Rangamati",
+        "place": "Rangamati",
+        "date": "2024-08-25",
+        "days": 3,
+        "rent": 48.5,
+        "bus": "AC Coach",
+        "description": "Explore the 'Lake City' of Bangladesh, Rangamati. Enjoy the scenic beauty of Kaptai Lake, boat rides, and the unique culture of the indigenous communities. Visit the Rangamati Hanging Bridge and local markets.",
+        "image": "https://i.ibb.co/ZM87b9m/rangamati.jpg"
+    },
+    {
+        "name": "Adventure in Bandarban",
+        "place": "Bandarban",
+        "date": "2024-08-30",
+        "days": 4,
+        "rent": 59,
+        "bus": "Non-AC Coach",
+        "description": "Embark on an adventure in the hilly terrains of Bandarban. Discover stunning waterfalls, lush green hills, and experience the thrill of trekking. Visit Nilgiri, Boga Lake, and Golden Temple for an unforgettable experience.",
+        "image": "https://i.ibb.co/q9ZsLTq/bandarban.jpg"
+    },
+    {
+        "name": "Island Escape to Saint Martin",
+        "place": "Saint Martin",
+        "date": "2024-09-05",
+        "days": 3,
+        "rent": 60,
+        "bus": "AC Coach",
+        "description": "Relax on the coral island of Saint Martin. Enjoy crystal clear waters, beautiful coral reefs, and pristine beaches. Perfect for snorkeling, diving, and unwinding by the sea.",
+        "image": "https://i.ibb.co/1RDMDjK/saint.jpg"
+    },
+    {
+        "name": "Nature Retreat at Sitakundu",
+        "place": "Sitakundu",
+        "date": "2024-09-10",
+        "days": 2,
+        "rent": 25,
+        "bus": "Non-AC Coach",
+        "description": "Escape to the natural beauty of Sitakundu with its lush greenery, waterfalls, and hiking trails. Visit the famous Chandranath Temple and enjoy the panoramic views from the hilltop.",
+        "image": "https://i.ibb.co/PGpd4FV/waterfall-tall-rock-8353-1125.jpg"
+    }
+]

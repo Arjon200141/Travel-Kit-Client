@@ -2,7 +2,6 @@ import { FaPhoneAlt } from "react-icons/fa";
 import Cover from "../Shared/Cover";
 import { MdEmail } from "react-icons/md";
 import { IoLocation } from "react-icons/io5";
-import { PiPaperPlaneTiltLight } from "react-icons/pi";
 import { useRef } from "react";
 import emailjs from '@emailjs/browser';
 import Swal from "sweetalert2";

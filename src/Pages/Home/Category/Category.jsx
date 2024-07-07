@@ -2,6 +2,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
+import { Link } from 'react-router-dom';
 
 const Category = () => {
     return (
@@ -48,6 +49,13 @@ const Category = () => {
                     <h3 className='mb-10 mt-6 text-3xl font-semibold text-center'>T-Shirts</h3>
                 </SwiperSlide>
             </Swiper>
+            <Link to="/shop">
+                <div className="my-8 mb-20 flex justify-center">
+                    <button className="btn bg-white px-12 pb-4 pt-2 border-b-4 border-black text-2xl font-semibold border-t-0 border-l-0 border-r-0">
+                        Purchase Products
+                    </button>
+                </div>
+            </Link>
         </div>
     );
 };

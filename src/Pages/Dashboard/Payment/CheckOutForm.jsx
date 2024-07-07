@@ -110,29 +110,45 @@ const CheckoutForm = () => {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <CardElement
-                options={{
-                    style: {
-                        base: {
-                            fontSize: '16px',
-                            color: '#424770',
-                            '::placeholder': {
-                                color: '#aab7c4',
+        <div className="mx-12">
+            <form onSubmit={handleSubmit}>
+                <h2 className="text-3xl font-semibold">Order Summary</h2>
+                <div className="divider"></div>
+                <div className="space-y-2">
+                    <div className="space-y-2">
+                        <h2 className="text-lg"><span className="font-semibold mr-48">Customer E-Mail :</span> {user.email}</h2>
+                        <h2 className="text-lg"><span className="font-semibold mr-52">Customer Name :</span> {user.displayName}</h2>
+                    </div>
+                    <div className="space-y-2">
+                        <h2 className="text-lg"><span className="font-semibold mr-36">Total Ordered Products :</span> {cart.length}</h2>
+                        <h2 className="text-lg"><span className="font-semibold mr-52">Amount to Pay :</span> {totalPrice} $</h2>
+                    </div>
+                    <div className="divider pb-8 pt-4"></div>
+                </div>
+                <CardElement
+                    options={{
+                        style: {
+                            base: {
+                                fontSize: '16px',
+                                color: '#424770',
+                                '::placeholder': {
+                                    color: '#aab7c4',
+                                },
+                            },
+                            invalid: {
+                                color: '#9e2146',
                             },
                         },
-                        invalid: {
-                            color: '#9e2146',
-                        },
-                    },
-                }}
-            />
-            <button className="btn btn-sm btn-primary my-4" type="submit" disabled={!stripe || !clientSecret}>
-                Pay
-            </button>
-            <p className="text-red-600">{error}</p>
-            {transactionId && <p className="text-green-600"> Your transaction id: {transactionId}</p>}
-        </form>
+                    }}
+                    className=""
+                />
+                <button className="btn btn-sm px-6 bg-gradient-to-r from-cyan-300 to-blue-300 my-4 h-14 text-2xl font-semibold mt-6" type="submit" disabled={!stripe || !clientSecret}>
+                    Pay {totalPrice} $
+                </button>
+                <p className="text-red-600">{error}</p>
+                {transactionId && <p className="text-green-600"> Your transaction id: {transactionId}</p>}
+            </form>
+        </div>
     );
 };
 

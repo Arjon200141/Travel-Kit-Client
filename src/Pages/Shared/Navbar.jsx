@@ -23,20 +23,23 @@ const Navbar = () => {
             <Link to="/shop"><li>Our Shop</li></Link>
             <Link to="/about"><li>About Us</li></Link>
             <Link to="/contact"><li>Contact Us</li></Link>
-            <Link to="/dashboard/cart">
-                <li className="">
-                    <button className="btn bg-white/35 border-0">
-                        <img src="https://i.ibb.co/jDdJBhv/shopping-cart.png" alt="" className="h-6 w-6" />
-                        <div className="badge bg-white/70 font-semibold">{cart.length}</div>
-                    </button>
-                </li>
-            </Link>
             {
                 user && isAdmin && <Link to="/dashboard/adminhome"><li>Dashboard</li></Link>
             }
             {
                 user && !isAdmin && <Link to="/dashboard/userHome"><li>Dashboard</li></Link>
             }
+            {
+                user && !isAdmin && <Link to="/dashboard/cart">
+                    <li className="">
+                        <button className="btn bg-white/35 border-0">
+                            <img src="https://i.ibb.co/jDdJBhv/shopping-cart.png" alt="" className="h-6 w-6" />
+                            <div className="badge bg-white/70 font-semibold">{cart.length}</div>
+                        </button>
+                    </li>
+                </Link>
+            }
+
         </>
     );
 
