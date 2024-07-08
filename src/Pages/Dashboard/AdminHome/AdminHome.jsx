@@ -26,7 +26,6 @@ const AdminHome = () => {
     if (!stats) {
         return <div>Error loading stats.</div>;
     }
-
     return (
         <div>
             <h2 className="text-5xl font-semibold text-center mb-12">
