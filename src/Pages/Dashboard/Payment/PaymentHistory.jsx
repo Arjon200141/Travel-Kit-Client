@@ -14,6 +14,7 @@ const PaymentHistory = () => {
             return res.data;
         }
     })
+
     return (
         <div>
             <div className='flex justify-center mb-12'>
@@ -31,7 +32,8 @@ const PaymentHistory = () => {
                             <th>Transaction Id</th>
                             <th>Date</th>
                             <th>Price</th>
-                          
+                            <th>Status</th>
+
                         </tr>
                     </thead>
                     <tbody>
@@ -44,7 +46,7 @@ const PaymentHistory = () => {
                                 <td className="text-lg">{payment.transactionId}</td>
                                 <td className="text-lg">{payment.date}</td>
                                 <td className="text-lg">{payment.price} $</td>
-                                
+                                <td className="text-lg">{payment.status}</td>
                             </tr>
                         )}
                     </tbody>
