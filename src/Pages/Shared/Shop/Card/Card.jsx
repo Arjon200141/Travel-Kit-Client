@@ -7,8 +7,11 @@ import Swal from "sweetalert2";
 import { useLocation, useNavigate } from "react-router-dom";
 import useAxiosSecure from "../../../../hooks/useAxiosSecure";
 import useCart from "../../../../hooks/useCart";
+import 'aos/dist/aos.css'; 
+import Aos from "aos";
 
 const Card = ({ item }) => {
+    Aos.init({ duration: 300 });
     const { image, productName, description, price, companyName, warranty, rating, _id } = item;
     const { user } = useContext(AuthContext);
     const navigate = useNavigate();
@@ -58,8 +61,8 @@ const Card = ({ item }) => {
         }
     }
     return (
-        <div className="">
-            <div className="card h-[500px] card-compact bg-white/35 shadow-xl">
+        <div >
+            <div data-aos="flip-left" className="card h-[500px] card-compact bg-white/35 shadow-xl">
                 <figure><img src={image} alt="Product" className="w-full h-80" /></figure>
                 <div className="card-body ">
                     <h2 className="card-title text-2xl">{productName}</h2>
@@ -72,7 +75,7 @@ const Card = ({ item }) => {
                         <p className="flex items-center gap-2 text-xl"><IoMdPricetags />{price} $</p>
                         <p className="text-xl"><span className="font-semibold ">Warrenty : </span>{warranty}</p>
                     </div>
-                    <div className="card-actions justify-center">
+                    <div data-aos="fade-up" className="card-actions justify-center">
                         <button onClick={() => handleAddtoCart(item)} className="btn hover:bg-cyan-300 w-full bg-lime-100 border-b-4 border-black border-t-0 border-x-0 text-2xl font-semibold">Add to Cart</button>
                     </div>
                 </div>

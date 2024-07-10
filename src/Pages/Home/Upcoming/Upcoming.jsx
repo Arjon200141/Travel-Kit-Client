@@ -3,10 +3,12 @@ import { FaBusAlt } from "react-icons/fa";
 import { FaCalendarDays, FaLocationDot } from "react-icons/fa6";
 import { IoIosPricetags } from "react-icons/io";
 import { MdDateRange } from "react-icons/md";
+import 'aos/dist/aos.css'; 
+import Aos from "aos";
 
 const Upcoming = () => {
     const [travels, setTravels] = useState([]);
-
+    Aos.init({ duration: 200 });
     useEffect(() => {
         fetch('upcoming.json')
             .then(res => res.json())
@@ -25,7 +27,7 @@ const Upcoming = () => {
                 {
                     travels.map(travel => (
                         <div key={travel.name} className="">
-                            <div className="card card-compact h-[500px] bg-base-100 shadow-xl">
+                            <div data-aos="zoom-in" className="card card-compact h-[500px] bg-base-100 shadow-xl">
                                 <figure>
                                     <img
                                         src={travel.image}

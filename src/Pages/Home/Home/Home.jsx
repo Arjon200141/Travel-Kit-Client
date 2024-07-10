@@ -6,7 +6,7 @@ import Upcoming from "../Upcoming/Upcoming";
 
 const Home = () => {
     return (
-        <div>
+        <div className="mx-0 px-0 max-w-full">
             <Banner></Banner>
             <Category></Category>
             <PopularProducts></PopularProducts>

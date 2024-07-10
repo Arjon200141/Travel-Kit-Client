@@ -1,11 +1,14 @@
 import { IoMdPricetags } from "react-icons/io";
 import { MdOutlineDescription } from "react-icons/md";
+import 'aos/dist/aos.css'; 
+import Aos from "aos";
 
 const Products = ({ item }) => {
+    Aos.init({ duration: 200 });
     const { image, productName, description, price, companyName } = item;
     return (
         <div>
-            <div className="card card-side h-52 bg-white/30 shadow-xl">
+            <div data-aos="zoom-in-up" className="card card-side h-52 bg-white/30 shadow-xl">
                 <figure><img src={image} alt="Product" className="ml-4 h-40 w-40 rounded-lg"/></figure>
                 <div className="card-body text-lg">
                     <h2 className="card-title text-2xl">{productName}</h2>

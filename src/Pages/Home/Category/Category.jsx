@@ -1,12 +1,13 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination } from 'swiper/modules';
+import {  Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Link } from 'react-router-dom';
 
+
 const Category = () => {
     return (
-        <div className='my-12'>
+        <div className='my-12 mx-0 min-w-screen'>
             <div className='flex justify-center mb-10'>
                 <h2 className='w-80 border-y-4 border-gray-600 text-center py-3 text-4xl font-semibold'>Our Categories</h2>
             </div>
@@ -17,7 +18,11 @@ const Category = () => {
                 pagination={{
                     clickable: true,
                 }}
-                modules={[Pagination]}
+                autoplay={{
+                    delay: 500,
+                    disableOnInteraction: false,
+                }}
+                modules={[ Autoplay]}
                 className="mySwiper"
             >
                 <SwiperSlide>

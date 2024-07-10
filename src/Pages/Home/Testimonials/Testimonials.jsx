@@ -1,5 +1,6 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
+import {  Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { useEffect, useState } from 'react';
@@ -21,7 +22,12 @@ const Testimonials = () => {
             </div>
 
             <div className='bg-sky-200/45 py-4 px-24'>
-                <Swiper navigation={true} modules={[Navigation]} className="mySwiper my-8">
+                <Swiper navigation={true} autoplay={{
+                    delay: 1000,
+                    disableOnInteraction: false,
+                }}
+                modules={[ Autoplay , Navigation]}
+                className="mySwiper my-8" >
 
                     {
                         reviews.map(review => <SwiperSlide key={review.id}>
