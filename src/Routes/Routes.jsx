@@ -36,7 +36,7 @@ import Review from "../Pages/Dashboard/Review/Review";
         {
           path:"/shop",
           element:<Shop></Shop>,
-          loader:()=> fetch('http://localhost:5000/products')
+          loader:()=> fetch('https://travel-kit-server.vercel.app/products')
         },
         {
           path:"/about",
@@ -97,12 +97,12 @@ import Review from "../Pages/Dashboard/Review/Review";
         {
           path:'manageproduct',
           element:<AdminRoutes><ManageProduct></ManageProduct></AdminRoutes>,
-          loader:()=> fetch('http://localhost:5000/products')
+          loader:()=> fetch('https://travel-kit-server.vercel.app/products')
         },
         {
           path:'updateproduct/:id',
           element:<AdminRoutes><UpdateProduct></UpdateProduct></AdminRoutes>,
-          loader:({params})=> fetch(`http://localhost:5000/products/${params.id}`)
+          loader:({params})=> fetch(`https://travel-kit-server.vercel.app/products/${params.id}`)
         }
       ]
     }

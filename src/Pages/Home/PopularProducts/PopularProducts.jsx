@@ -6,7 +6,7 @@ const PopularProducts = () => {
     const [showAll, setShowAll] = useState(false);
 
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://travel-kit-server.vercel.app/products')
             .then(res => res.json())
             .then(data => {
                 const popularItems = data.filter(item => item.type === 'Popular');
